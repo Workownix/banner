@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .typing-svg {
+            margin: 20px 0;
+            width: 100%;
+            max-width: 550px;
+        }
+        .video-container {
+            margin: 30px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .info {
+            margin: 20px 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .download-link {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        .download-link:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="typing-svg">
+            <img src="https://readme-typing-svg.herokuapp.com?font=Noto+Sans&size=26&pause=1000&color=134E8E&background=FFFFFF&center=true&vCenter=true&random=true&width=550&lines=Agentic+AI+Engineer;Full+Stack+Web+Developer;Founder+-+Aatfa+Siddiqui;Building+Intelligent+AI+Systems" alt="Typing Animation">
+        </div>
+
+        <div class="info">
+            <h1>Welcome to Banner Video</h1>
+            <p>This is an interactive video player showcasing the banner content.</p>
+        </div>
+
+        <div class="video-container">
+            <video controls>
+                <source src="WhatsApp Video 2026-02-24 at 2.17.23 AM.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="info">
+            <p>Video controls: Play, Pause, Volume, Fullscreen</p>
+            <a href="WhatsApp Video 2026-02-24 at 2.17.23 AM.mp4" class="download-link" download>
+                ⬇ Download Video
+            </a>
+        </div>
+    </div>
+</body>
+</html>
