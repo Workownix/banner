@@ -6,7 +6,7 @@
     <title>Banner Video</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
@@ -17,25 +17,57 @@
             color: white;
             margin: 0;
             padding: 20px;
+            overflow-x: hidden;
         }
         .container {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 800px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 50px 40px;
+            max-width: 900px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotate 15s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         .typing-svg {
-            margin: 20px 0;
+            margin: 25px 0;
             width: 100%;
-            max-width: 550px;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
         }
         .video-container {
-            margin: 30px 0;
-            border-radius: 15px;
+            margin: 40px 0;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        .video-container::before {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+            pointer-events: none;
         }
         video {
             width: 100%;
@@ -43,22 +75,52 @@
             display: block;
         }
         .info {
-            margin: 20px 0;
+            margin: 25px 0;
             font-size: 18px;
             line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+        .info h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .info p {
+            font-size: 20px;
+            margin: 0;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
         }
         .download-link {
             display: inline-block;
-            background: #4CAF50;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
             color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 15px 40px;
+            border-radius: 30px;
             text-decoration: none;
-            margin: 20px 0;
-            transition: background 0.3s;
+            margin: 25px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+            position: relative;
+            z-index: 2;
         }
         .download-link:hover {
-            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+        }
+        .download-link:active {
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -69,8 +131,8 @@
         </div>
 
         <div class="info">
-            <h1>Welcome to Banner Video</h1>
-            <p>This is an interactive video player showcasing the banner content.</p>
+            <h1>🎥 Welcome to Banner Video</h1>
+            <p>🚀 This is an interactive video player showcasing the banner content.</p>
         </div>
 
         <div class="video-container">
